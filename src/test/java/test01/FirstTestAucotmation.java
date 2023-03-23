@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class FirstTestAucotmation {
 	static WebDriver driver;
 	public static void main(String[] args) {
-	    System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+	    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 	      
 	      // Set Chrome options
 	      ChromeOptions options = new ChromeOptions();
