@@ -1,7 +1,10 @@
 package test01;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,22 +12,28 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 
 public class FirstTestAucotmation {
-	
+	static WebDriver driver;
 	public static void main(String[] args) {
-		WebDriver driver;
-	  //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-	    ChromeOptions options = new ChromeOptions();
-	    options.addArguments("headless");
-	    options.addArguments("disable-gpu");
-	    driver = new ChromeDriver(options);
-	    driver.get("https://www.google.com");
-	    System.out.println("Title of the page is: " + driver.getTitle());
-	    Assert.assertTrue("Page title is not correct",driver.getTitle().equals("Google"));
+	    System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+	      
+	      // Set Chrome options
+	      ChromeOptions options = new ChromeOptions();
+	      options.addArguments("--start-maximized");
+	      
+	      // Initialize the ChromeDriver with options
+	   driver = new ChromeDriver(options);
+	      
+	      // Launch the Chrome browser
+	      driver.get("https://it.microtechlimited.com/index.html");
+	     // navigateURL("https://it.microtechlimited.com/index.html");
+			String s = getText(By.xpath("//div//h1['Welcome to MicroTech NA.']"));
+			assertEquals("Welcome to MicroTech NA.", s);
+	      // Close the browser
+	      driver.quit();
 	}
-	
-//  @Test
-//  public void testGoogle() {
-//	  
-//	
-//   }
+
+	public static String getText(By by){
+		return driver.findElement(by).getText();
+	}
+
 }
