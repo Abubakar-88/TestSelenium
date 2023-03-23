@@ -6,10 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+
+
 public class FirstTestAucotmation {
+	
 	public static void main(String[] args) {
 		WebDriver driver;
-	    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+	  //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 	    ChromeOptions options = new ChromeOptions();
 	    options.addArguments("headless");
 	    options.addArguments("disable-gpu");
