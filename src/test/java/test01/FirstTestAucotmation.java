@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 @Test
 public class FirstTestAucotmation {
 	static WebDriver driver;
-	public void OpenBrowser {
+	public void OpenBrowser() {
 	    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 	      
 	      // Set Chrome options
