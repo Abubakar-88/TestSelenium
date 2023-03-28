@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
-
+@Test
 public class FirstTestAucotmation {
 	static WebDriver driver;
 	public static void main(String[] args) {
